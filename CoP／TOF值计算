@@ -1,0 +1,21 @@
+import matplotlib.pyplot as plt
+print('确保您的文件夹放入了程序的文件夹')
+Cdll = input('please enter you Call\n')
+AESCA = float(Cdll)/40
+filename = '123.txt'
+E = []
+j = []
+with open(filename) as file_object:
+    for line in file_object:
+        line = line.split(',')
+        a = float(line[0])+0.222
+        E.append(a)
+        b = (float(line[1])*1000)/0.2827
+        b = abs(b)*(3.12/(1.214*AESCA))
+        j.append(b)
+plt.plot(E, j, linewidth=1, c='blue')
+plt.title('LSV',fontsize = 18)
+plt.xlabel('E(E vs REH)', fontsize = 18)
+plt.ylabel('j', fontsize = 18)
+plt.tick_params(axis='both', labelsize = 14)
+plt.show
